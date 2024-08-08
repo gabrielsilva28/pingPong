@@ -95,8 +95,8 @@ function moverRaqueteOponente() {
 }
 
 function verificarColisaoRaquete(x, y) {
-  let colidiu = collideRectCircle(x, y, RAQUETE_COMPRIMENTO, RAQUETE_ALTURA, xBolinha, yBolinha, raio);
-  if (colidiu) {
+  if (xBolinha + raio > x && xBolinha - raio < x + RAQUETE_COMPRIMENTO &&
+      yBolinha + raio > y && yBolinha - raio < y + RAQUETE_ALTURA) {
     velocidadeXBolinha *= -1;
     // raquetada.play();
   }
@@ -126,4 +126,3 @@ function verificarPontuacao() {
     // ponto.play();
   }
 }
-
